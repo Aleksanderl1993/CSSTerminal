@@ -1,5 +1,39 @@
 $primary-color: blue;
 
 body {
-    color: $primary-color;
+    background-color: #727578 !important;
+}
+
+.container {
+    background-color: #9ca2ab !important;
+}
+
+//=============================================
+//  main site styles
+//=============================================
+
+.preferences-grid {
+    display: grid;
+    grid-column-gap: 1.4em;
+    //grid-template-columns: auto;
+    grid-template-columns: 3fr 9fr;
+    grid-template-rows: auto;
+}
+
+.preferences-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+    justify-items: stretch;
+    align-items: stretch;
+}
+
+.preferences-info-grid div {
+    border: 2px solid #d20962;
+    border-radius: 3px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
