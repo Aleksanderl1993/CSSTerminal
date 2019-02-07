@@ -2,7 +2,7 @@ import './style/style.css';
 import './style/style.scss';
 import 'terminal.css'
 
-
+//  main app
 
 document.getElementById('browser').innerHTML = 'Browser????';
 
@@ -54,6 +54,8 @@ document.getElementById('browser').innerHTML = 'Browser????';
 
 // console.log(info);
 
+//  getting user machine info
+
 var txt = "";
 txt += "Browser CodeName: " + navigator.appCodeName +'\n';
 txt += "Browser Name: " + navigator.appName +'\n';
@@ -66,6 +68,8 @@ txt += "User-agent header: " + navigator.userAgent;
 
 console.log(txt);
 
+//  get online status and print to div
+
 var onLine = true;
 var offLine = false;
 
@@ -75,10 +79,30 @@ console.log(isOnline);
 
 document.getElementById('online_status').innerHTML = `Is online: `+isOnline;
 
+//  get screen resolution and print to div
+
 var screenHeight = window.screen.height;
 var screenWidth = window.screen.width;
 
 document.getElementById('screen').innerHTML = `
-Width: ${screenWidth} <br>
-Height: ${screenHeight}
+Width:  ${screenWidth}px<br>
+Height: ${screenHeight}px
 `;
+
+//  get OS information and print to a div
+
+var cutText = navigator.appVersion.split('; ');
+var cutText2 = cutText[1].split(') ');
+
+document.getElementById('os_info').innerHTML = `Your OS: <br>`+cutText2[0];
+
+//  get date & time and print to a div
+
+function getDate() {
+    var getCurrentDate = new Date();
+    var dateTime = getCurrentDate.getDate()+getCurrentDate.getTime();
+    console.log(dateTime);
+
+};
+
+setInterval(getDate,1000);
