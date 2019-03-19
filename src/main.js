@@ -101,17 +101,17 @@ function getDate() {
     var getCurrentDate = new Date();
 
     var secondsWithZero = getCurrentDate.getSeconds();
-    console.log(secondsWithZero);
+    // console.log(secondsWithZero);
     if (secondsWithZero >= 0 && secondsWithZero <= 9) {
         secondsWithZero = '0' + secondsWithZero;
-        console.log(secondsWithZero);
+        // console.log(secondsWithZero);
     }
 
     var minutesWithZero = getCurrentDate.getMinutes();
-    console.log(minutesWithZero);
+    // console.log(minutesWithZero);
     if (minutesWithZero >= 0 && minutesWithZero <= 9) {
         minutesWithZero = '0' + minutesWithZero;
-        console.log(secondsWithZero);
+        // console.log(secondsWithZero);
     }
 
     var dateTime = getCurrentDate.getDate() + "/" + (getCurrentDate.getMonth() + 1)
@@ -125,3 +125,10 @@ function getDate() {
 setInterval(getDate, 1000);
 
 //
+
+var os = require('os');
+console.log(JSON.stringify(os.networkInterfaces()));
+console.log("Architecture: " + position.timestamp);
+
+document.getElementById('ip').innerHTML = 'Hostname ' + os.hostname();
+
